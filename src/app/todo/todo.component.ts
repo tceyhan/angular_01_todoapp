@@ -34,6 +34,17 @@ export class TodoComponent {
 
   model = new Model();
 
+  // addItem(textItem: any) {
+  //   console.log(textItem.value);
+  // }
+  addItem(value: string) {
+    console.log(value);
+    if (value != '') {
+      return this.model.items.push({ description: value, action: 'no' });
+    }
+    return alert('Herhangi bir bilgi giriniz.!');
+  }
+
   getName() {
     return this.model.name;
   }

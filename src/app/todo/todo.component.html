@@ -3,8 +3,20 @@
     <div class="col-5 mx-auto">
       <h3 class="bg-primary text-white p-3">{{ getName() }}'s Todo List</h3>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" />
-        <button class="btn btn-outline-primary">Add</button>
+        <input
+          #textItem
+          type="text"
+          class="form-control"
+          (keyup.enter)="addItem(textItem.value);textItem.value=''"
+       
+        />
+           <!-- (blur)="addItem(textItem.value)" eklenebilir input dışınaa tıklayınca ekleme yapar-->
+        <button
+          class="btn btn-outline-primary"
+          (click)="addItem(textItem.value); textItem.value = ''"
+        >
+          Add
+        </button>
       </div>
       <div class="form-check mb-3">
         <input
